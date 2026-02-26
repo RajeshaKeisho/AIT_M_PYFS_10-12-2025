@@ -1,0 +1,14 @@
+<h2>Customers & Orders</h2>
+
+{% for customer in customers %}
+<h3>{{ customer.name }}</h3>
+
+<ul>
+{% for order in customer.order_set.all %}
+<li>Order ID: {{ order.id }}</li>
+{% empty %}
+<li>No Orders</li>
+{% endfor %}
+</ul>
+
+{% endfor %}

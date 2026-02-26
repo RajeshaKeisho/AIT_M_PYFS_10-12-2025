@@ -1,0 +1,12 @@
+<h2>Search Books</h2>
+
+<form method="GET">
+<input type="text" name="q" value="{{ query }}">
+<button type="submit">Search</button>
+</form>
+
+<ul>
+{% for book in books %}
+<li>{{ book.title }} - ₹{{ book.price }}</li>
+{% endfor %}
+</ul>

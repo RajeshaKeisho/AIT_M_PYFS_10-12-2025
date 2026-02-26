@@ -1,0 +1,15 @@
+<h2>Low Stock Books</h2>
+
+<table border="1">
+<tr>
+<th>Book</th>
+<th>Stock</th>
+</tr>
+
+{% for book in books %}
+<tr>
+<td>{{ book.title }}</td>
+<td>{{ book.stock }}</td>
+</tr>
+{% endfor %}
+</table>

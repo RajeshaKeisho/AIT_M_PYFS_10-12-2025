@@ -1,0 +1,13 @@
+<h2>{{ book.title }}</h2>
+
+<p>Author: {{ book.author.name }}</p>
+<p>Price: {{ book.price }}</p>
+<p>Stock: {{ book.stock }}</p>
+
+<h3>Orders</h3>
+
+<ul>
+{% for order in orders %}
+<li>Quantity: {{ order.quantity }}</li>
+{% endfor %}
+</ul>
