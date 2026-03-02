@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Books</title>
+</head>
+<body>
+
+<h2>Book List</h2>
+
+<a href="{% url 'fbv_book_create' %}">Add Book (FBV)</a> |
+<a href="{% url 'cbv_book_create' %}">Add Book (CBV)</a>
+
+<hr>
+
+{% for book in books %}
+    <p>
+        <b>{{ book.title }}</b> - {{ book.author }}
+        <a href="/fbv/books/{{ book.id }}/">FBV View</a>
+        <a href="/cbv/books/{{ book.id }}/">CBV View</a>
+
+    | <a href="/fbv/books/{{ book.id }}/update/">FBV Edit</a>
+    | <a href="/fbv/books/{{ book.id }}/delete/">FBV Delete</a>
+
+    | <a href="/cbv/books/{{ book.id }}/update/">CBV Edit</a>
+    | <a href="/cbv/books/{{ book.id }}/delete/">CBV Delete</a>
+    </p>
+{% empty %}
+    <p>No books available</p>
+{% endfor %}
+
+</body>
+</html>
